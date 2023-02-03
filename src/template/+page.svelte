@@ -1,3 +1,6 @@
+<script>
+  
+</script>
 <div class=" bg-white flex flex-col max-w-3xl mx-auto px-4 py-6">
 	<!-- header -->
 	<div class="flex border-b border-solid border-gray-300 pb-6 gap-6">
