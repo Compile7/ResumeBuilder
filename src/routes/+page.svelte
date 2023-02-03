@@ -1,6 +1,4 @@
 <script>
-	export const prerender = true;
-	export const ssr = true;
 	import ButtonGroup from '../components/ButtonGroup.svelte';
 	import NavBar from '../components/NavBar.svelte';
 	import Sidebar from '../components/Sidebar.svelte';

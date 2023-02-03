@@ -10,12 +10,14 @@
 	} from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa';
 	import FontOption from './FontOption.svelte';
-	import html2pdf from 'html2pdf.js';
+	// @ts-ignore
+  
 	import { clickOutside } from '$lib/outclick';
 
 	function download() {
 		console.log('inside download button');
 		let element = document.getElementById('preview');
+    //@ts-ignore
 		html2pdf(element);
 	}
 	let buttons = [
