@@ -1,6 +1,6 @@
 <script>
 	import Button from './Button.svelte';
-  import { fly } from 'svelte/transition';
+	import { fly } from 'svelte/transition';
 	import {
 		faSave,
 		faDownload,
@@ -48,7 +48,7 @@
 			onClick: download,
 		},
 	];
-  
+
 	function selectOption(e) {
 		console.log('this one inside select option');
 		switch (e.currentTarget.id) {
@@ -64,24 +64,31 @@
 	}
 </script>
 
-<div class="flex bg-slate-100 ">
+<div class="flex justify-center ">
 	{#each buttons as { text, icon, show, options, onClick }, i}
-		<button  class="relative">
+		<button class="relative">
 			<Button
 				leftRounded={i == 0 ? true : false}
 				rightRounded={i == buttons.length - 1 ? true : false}
 				rb={i == buttons.length - 1 ? true : false}
 			>
 				{#if show}
-        <button class="absolute bottom-24 w-full" use:clickOutside on:outclick ={() => show = false} on:click = {() => {(show=false)}}  transition:fly >
-
-          <svelte:component this={options}  />
-        </button>
+					<button
+						class="absolute bottom-24 w-full"
+						use:clickOutside
+						on:outclick={() => (show = false)}
+						on:click={() => {
+							show = false;
+						}}
+						transition:fly
+					>
+						<svelte:component this={options} />
+					</button>
 				{/if}
 				<button on:click={onClick} id={text} class="flex items-center hover:text-rose-600  z-10">
 					<Fa {icon} class="px-1" />
 					<div class="text-lg">{text}</div>
-        </button>
+				</button>
 			</Button>
 		</button>
 	{/each}
