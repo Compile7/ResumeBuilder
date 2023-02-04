@@ -39,7 +39,7 @@
 		</div>
 	</div>
 	<!-- container -->
-	<div class="flex flex-col">
+	<div class="flex flex-col p-6 ">
 		<!-- profile -->
 		<div class="profile border-b border-solid border-gray-300 py-6">
 			<h2 class="text-xl font-bold mb-3">Profile</h2>
@@ -145,8 +145,8 @@
 					<label for="" class="bg-gray-900 text-white px-2 py-1 text-xs rounded-full">Redux</label>
 					<label for="" class="bg-gray-900 text-white px-2 py-1 text-xs rounded-full">Vue</label>
 				</div>
-				<h2 class="text-xl font-bold mb-3 mt-12">Certification</h2>
-				<div class="flex flex-col gap-2">
+				<h2 class="text-xl font-bold mb-3">Certification</h2>
+				<div class="flex flex-col p-6  gap-2">
 					<div class="flex items-center justify-between">
 						<div class="font-medium">Design School</div>
 						<div class="text-gray-500">2015</div>
@@ -165,7 +165,7 @@
 					</div>
 				</div>
 				<h2 class="text-xl font-bold mb-3 mt-12">Hobbies</h2>
-				<div class="flex flex-col gap-2">
+				<div class="flex flex-col p-6  gap-2">
 					<div class="flex gap-1 text-gray-500">
 						<div>Writing</div>
 						<div>Blogging</div>
