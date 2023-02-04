@@ -11,14 +11,14 @@
 	import Fa from 'svelte-fa';
 	import FontOption from './FontOption.svelte';
 	// @ts-ignore
-  
+
 	import { clickOutside } from '$lib/outclick';
 
 	function download() {
 		console.log('inside download button');
 		let element = document.getElementById('preview');
-    //@ts-ignore
-		html2pdf(element);
+		//@ts-ignore
+		html2pdf(element, { html2canvas: { scale: 2 } });
 	}
 	let buttons = [
 		{
