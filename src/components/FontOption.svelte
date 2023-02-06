@@ -13,12 +13,12 @@
 	];
 
 	const changeFont = (e) => {
-    console.log("font", e.currentTarget.id)
+		console.log('font', e.currentTarget.id);
 		$resume.font = e.currentTarget.id;
 	};
 </script>
 
-<div class="flex flex-col h-10 w-20">
+<div class="flex flex-col p-6  h-10 w-20">
 	{#each fontOptions as { text }}
 		<button on:click={changeFont} id={text}>
 			<Button>
