@@ -54,14 +54,15 @@
 					bind:value={education.summary}
 				/>
 			</div>
-
-			<button
-				on:click={removeEducation}
-				id={education.id}
-				class=" mb-2 flex justify-center items-center gap-2 py-1 px-4 rounded-full text-red-700 border border-solid border-red-700"
-			>
-				<Fa icon={faTrash} class=" text-red-700 " />Remove Employment</button
-			>
+			{#if $resume.educations.length > 1}
+				<button
+					on:click={removeEducation}
+					id={education.id}
+					class=" mb-2 flex justify-center items-center gap-2 py-1 px-4 rounded-full text-red-700 border border-solid border-red-700"
+				>
+					<Fa icon={faTrash} class=" text-red-700 " />Remove Education</button
+				>
+			{/if}
 		{/each}
 
 		<button
