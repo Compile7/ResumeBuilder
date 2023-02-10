@@ -1,6 +1,7 @@
 <script>
 	import Button from './Button.svelte';
 	import { fly } from 'svelte/transition';
+  import {resume} from '../store'
 	import {
 		faSave,
 		faDownload,
@@ -10,14 +11,17 @@
 	} from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa';
 	import FontOption from './FontOption.svelte';
-	// @ts-ignore
+   //@ts-ignore
+   import html2pdf from "html2pdf.js/dist/html2pdf"
 
+
+    
 	import { clickOutside } from '$lib/outclick';
 
 	function download() {
 		console.log('inside download button');
 		let element = document.getElementById('preview');
-		//@ts-ignore
+    element.style.fontFamily = $resume.font
 		html2pdf(element, { html2canvas: { scale: 2 } });
 	}
 	let buttons = [

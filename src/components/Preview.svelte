@@ -11,12 +11,12 @@
 	$: {
 		console.log('inside reactive statement', $resume.font);
 		switch ($resume.font) {
-			case 'classic': {
-				fontStyle = 'font-family:serif';
+			case 'Dosis': {
+				fontStyle = 'font-family:"Dosis"';
 				break;
 			}
-			case 'elegant': {
-				fontStyle = 'font-family:"Poppins"';
+			case 'Poppins': {
+				fontStyle = 'font-family: Poppins';
 				break;
 			}
 		}

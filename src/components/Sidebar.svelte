@@ -1,6 +1,4 @@
 <script>
-	import { resume } from '../store';
-	import Experience from './Experience.svelte';
 	import Skills from './Skills.svelte';
 	import PersonalDetails from './PersonalDetails.svelte';
 	import Employment from './Employment.svelte';
