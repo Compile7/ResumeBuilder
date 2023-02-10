@@ -12,15 +12,19 @@
 	import Fa from 'svelte-fa';
 	import FontOption from './FontOption.svelte';
    //@ts-ignore
-   import html2pdf from "html2pdf.js/dist/html2pdf"
 
 
     
 	import { clickOutside } from '$lib/outclick';
-
+	import { onMount } from 'svelte';
+  // let html2pdf;
+  // onMount(async() =>{
+  //   html2pdf = document.html2pdf
+  // })
 	function download() {
 		console.log('inside download button');
 		let element = document.getElementById('preview');
+    console.log({font: $resume.font})
     element.style.fontFamily = $resume.font
 		html2pdf(element, { html2canvas: { scale: 2 } });
 	}
