@@ -56,6 +56,8 @@
 					bind:value={employment.summary}
 				/>
 			</div>
+			
+			{#if $resume.employments.length > 1} 
 			<button
 				on:click={removeEmployment}
 				id={employment.id}
@@ -63,6 +65,7 @@
 			>
 				<Fa icon={faTrash} class=" text-red-700 " />Remove Employment</button
 			>
+			{/if}
 		{/each}
 		<button
 			class=" flex justify-center items-center gap-2 py-1 px-4 rounded-full text-blue-700 border border-solid border-blue-700"

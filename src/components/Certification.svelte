@@ -1,10 +1,16 @@
 <script>
-	import { faAdd } from '@fortawesome/free-solid-svg-icons';
+	import { faAdd, faTrash } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa';
 	import { resume } from '../store';
 	function addcertification() {
-		$resume.certificcertificationsation.push({ name: '', year: '' });
+		$resume.certifications.push({ name: '', year: '',id: Date.now() });
 		$resume.certifications = $resume.certifications;
+	}
+
+	function removeCertification(e) {
+		$resume.certifications = $resume.certifications.filter((element) => {
+			return element.id != e.currentTarget.id;
+		});
 	}
 </script>
 
@@ -32,6 +38,15 @@
 					bind:value={certification.year}
 				/>
 			</div>
+				{#if $resume.certifications.length > 1} 
+			<button
+				on:click={removeCertification}
+				id={certification.id}
+				class=" mb-2 flex justify-center items-center gap-2 py-1 px-4 rounded-full text-red-700 border border-solid border-red-700"
+			>
+				<Fa icon={faTrash} class=" text-red-700 " />Remove Certification</button
+			>
+			{/if}
 		{/each}
 		<button
 			class=" flex justify-center items-center gap-2 py-1 px-4 rounded-full text-blue-700 border border-solid border-blue-700"
@@ -39,5 +54,6 @@
 		>
 			<Fa icon={faAdd} class="focus:text-blue-700  text-blue-700 " />Add Certification</button
 		>
+
 	</div>
 </div>

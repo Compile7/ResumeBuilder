@@ -1,10 +1,16 @@
 <script>
-	import { faAdd } from '@fortawesome/free-solid-svg-icons';
+	import { faAdd,faTrash } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa';
 	import { resume } from '../store';
 	function addhobbies() {
-		$resume.hobbies.push('');
+		$resume.hobbies.push({id: Date.now(), value:''});
 		$resume.hobbies = $resume.hobbies;
+	}
+
+	function removeHobbies(e) {
+		$resume.hobbies = $resume.hobbies.filter((element) => {
+			return element.id != e.currentTarget.id;
+		});
 	}
 </script>
 
@@ -13,14 +19,24 @@
 	<div class="flex flex-col p-6  ">
 		{#each $resume.hobbies as hobby}
 			<div class="form-group flex flex-col gap-1 mb-4">
-				<label for="" class="text-sm text-gray-700">Skill</label>
+				<label for="" class="text-sm text-gray-700">Hobbies</label>
 				<input
 					type="text"
 					class="py-2 px-4 rounded-md border border-solid border-gray-400 text-sm"
-					placeholder="Skill"
-					bind:value={hobby}
+					placeholder="Hobbies"
+					bind:value={hobby.value}
 				/>
 			</div>
+
+			{#if $resume.hobbies.length > 1} 
+			<button
+				on:click={removeHobbies}
+				id={hobby.id}
+				class=" mb-2 flex justify-center items-center gap-2 py-1 px-4 rounded-full text-red-700 border border-solid border-red-700"
+			>
+				<Fa icon={faTrash} class=" text-red-700 " />Remove Hobbies</button
+			>
+			{/if}
 		{/each}
 		<button
 			class=" flex justify-center items-center gap-2 py-1 px-4 rounded-full text-blue-700 border border-solid border-blue-700"
