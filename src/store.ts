@@ -2,8 +2,7 @@ import { writable } from 'svelte/store';
 
 export const resume = writable({
   personalDetails:{
-    firstName:"",
-    lastName:"",
+    yourName:"",
     companyName: '',
     position:'',
     email:"",
@@ -14,10 +13,12 @@ export const resume = writable({
     professionalSummary:"",
    },
 
-   skills: [''],
+  skills: [''],
   certifications:[{name:'', year:''}],
-  educations:[{name:'', summary:'', started:'',finished:'', id:1}],
-  employments:[{name:'', summary:'', started:'',finished:'', id:1}],
+  education:[{name:'', summary:'', started:'',finished:'', id:1}],
+  employment:[{name:'', summary:'', started:'',finished:'', id:1}],
   hobbies: [''],
+  summary: [{fullsummary: ''}],
+  languages: [{myLanguage: ''}],
 	font: 'classic',
 });
