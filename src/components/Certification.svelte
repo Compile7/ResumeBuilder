@@ -3,12 +3,12 @@
 	import Fa from 'svelte-fa';
 	import { resume } from '../store';
 	function addcertification() {
-		$resume.certificcertificationsation.push({ name: '', year: '' });
+		$resume.certifications.push({ name: '', year: '' });
 		$resume.certifications = $resume.certifications;
 	}
 </script>
 
-<div class="m-6 bg-white rounded-xl border-solid border border-gray-300">
+<div class="m-6 bg-white rounded-xl border-solid border border-gray-300" id="Certificates">
 	<h2 class="border-b border-solid  border-gray-300 px-6 py-4 text-xl font-semibold">
 		Certifications
 	</h2>
@@ -34,7 +34,7 @@
 			</div>
 		{/each}
 		<button
-			class=" flex justify-center items-center gap-2 py-1 px-4 rounded-full text-blue-700 border border-solid border-blue-700"
+			class=" flex justify-center items-center gap-2 py-1 px-4 rounded-full text-blue-700 border border-solid border-blue-700 rb-button hover:text-white hover:bg-blue-700 transition"
 			on:click={addcertification}
 		>
 			<Fa icon={faAdd} class="focus:text-blue-700  text-blue-700 " />Add Certification</button

@@ -12,13 +12,13 @@
 	</div>
 	<div class="main-container flex">
 		<SidebarNavigation />
-		<div class="content bg-gray-100 w-[86%] flex max-h-[91vh]">
-			<div class="form w-[38%]  overflow-y-auto ">
+		<div class="content bg-gray-100 w-[86%] flex max-h-[91vh] ">
+			<div class="form w-[38%]  overflow-y-auto custom_scroll">
 				<Sidebar />
 			</div>
 			<div class="preview w-[62%] bg-gray-700 py-6">
 				<!-- preview Section -->
-				<div class=" grow overflow-y-auto max-h-[79vh] "><Preview /></div>
+				<div class=" grow overflow-y-auto max-h-[79vh]"><Preview /></div>
 				<!-- ButtonGroup Section -->
 				<div class="self-center mt-2"><ButtonGroup /></div>
 			</div>

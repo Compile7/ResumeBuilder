@@ -3,12 +3,12 @@
 	import Fa from 'svelte-fa';
 	import { resume } from '../store';
 	function addEducation() {
-		$resume.educations.push({ name: '', summary: '', started: '', finished: '', id: Date.now() });
-		$resume.educations = $resume.educations;
+		$resume.education.push({ name: '', summary: '', started: '', finished: '', id: Date.now() });
+		$resume.education = $resume.education;
 	}
 
 	function removeEducation(e) {
-		$resume.educations = $resume.educations.filter((element) => {
+		$resume.education = $resume.education.filter((element) => {
 			return element.id != e.currentTarget.id;
 		});
 	}
@@ -38,10 +38,10 @@
 	}
 </script>
 
-<div class="m-6 bg-white rounded-xl border-solid border border-gray-300">
-	<h2 class="border-b border-solid  border-gray-300 px-6 py-4 text-xl font-semibold">Educations</h2>
+<div class="m-6 bg-white rounded-xl border-solid border border-gray-300" id="Education">
+	<h2 class="border-b border-solid  border-gray-300 px-6 py-4 text-xl font-semibold">Education</h2>
 	<div class="flex flex-col p-6  ">
-		{#each $resume.educations as education}
+		{#each $resume.education as education}
 			<div class="form-group flex flex-col gap-1 mb-4">
 				<label for="" class="text-sm text-gray-700">Name</label>
 				<input
@@ -60,10 +60,10 @@
 					bind:value={education.started}
 					on:blur={validateStartDate}
 				/>
+				{#if startDateError && date !== ''}
+					<p class="text-sm text-red-500">{startDateError}</p>
+				{/if}
 			</div>
-			{#if startDateError && date !== ''}
-				<p class="text-sm text-red-500">{startDateError}</p>
-			{/if}
 			<div class="form-group flex flex-col gap-1 mb-4">
 				<label for="" class="text-sm text-gray-700">End Date</label>
 				<input
@@ -73,24 +73,26 @@
 					bind:value={education.finished}
 					on:blur={validateEndDate}
 				/>
+				{#if endDateError && date !== ''}
+					<p class="text-sm text-red-500">{endDateError}</p>
+				{/if}
 			</div>
-			{#if endDateError && date !== ''}
-				<p class="text-sm text-red-500">{endDateError}</p>
-			{/if}
 			<div class="form-group flex flex-col gap-1 mb-4">
 				<label for="" class="text-sm text-gray-700">Summary</label>
-				<input
-					type="text"
+				<textarea
+					id=""
+					cols="15"
+					rows="4"
 					class="py-2 px-4 rounded-md border border-solid border-gray-400 text-sm"
 					placeholder="Summary"
 					bind:value={education.summary}
 				/>
 			</div>
-			{#if $resume.educations.length > 1}
+			{#if $resume.education.length > 1}
 				<button
 					on:click={removeEducation}
 					id={education.id}
-					class=" mb-2 flex justify-center items-center gap-2 py-1 px-4 rounded-full text-red-700 border border-solid border-red-700"
+					class=" mb-2 flex justify-center items-center gap-2 py-1 px-4 rounded-full text-red-700 border border-solid border-red-700 rb-button hover:text-white hover:bg-red-700 transition"
 				>
 					<Fa icon={faTrash} class=" text-red-700 " />Remove Education</button
 				>
@@ -98,7 +100,7 @@
 		{/each}
 
 		<button
-			class=" flex justify-center items-center gap-2 py-1 px-4 rounded-full text-blue-700 border border-solid border-blue-700"
+			class=" flex justify-center items-center gap-2 py-1 px-4 rounded-full text-blue-700 border border-solid border-blue-700 rb-button hover:text-white hover:bg-blue-700 transition"
 			on:click={addEducation}
 		>
 			<Fa icon={faAdd} class="focus:text-blue-700  text-blue-700 " />Add Education</button

@@ -6,19 +6,22 @@
 			text: 'Personal Details',
 		},
 		{
-			text: 'Experience',
+			text: 'Education',
 		},
 		{
-			text: 'Education',
+			text: 'Experience',
 		},
 		{
 			text: 'Skills',
 		},
 		{
-			text: 'Languages',
+			text: 'Certificates',
 		},
 		{
-			text: 'Certificates',
+			text: 'Hobbies',
+		},
+		{
+			text: 'Languages',
 		},
 		{
 			text: 'Summary',
@@ -30,9 +33,10 @@
 	<ul>
 		{#each sidebarNavigation as { text }}
 			<li>
-				<button
+				<a
+					href="#{text}"
 					class="w-full flex items-center gap-4 py-3 px-4  focus:text-blue-700 focus:bg-blue-50  hover:text-blue-700 hover:bg-blue-50   font-medium text-gray-700 "
-					><Fa icon={faUser} class="focus:text-blue-700  text-gray-700 " />{text}</button
+					><Fa icon={faUser} class="focus:text-blue-700  text-gray-700 " />{text}</a
 				>
 			</li>
 		{/each}

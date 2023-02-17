@@ -3,8 +3,8 @@
 	$: e = $resume.personalDetails;
 	$: hobbies = $resume.hobbies.filter((t) => t);
 	$: certifications = $resume.certifications.filter((t) => t);
-	$: employments = $resume.employments.filter((t) => t);
-	$: educations = $resume.educations.filter((t) => t);
+	$: employments = $resume.employment.filter((t) => t);
+	$: educations = $resume.education.filter((t) => t);
 	$: skills = $resume.skills.filter((t) => t);
 	//$: console.log({ $resume });
 	let fontStyle = 'font-family:serif';
@@ -31,7 +31,7 @@
 				<img class="avatar" src={e.avatar} alt="d" />
 			</div>
 			<div class="profile-details w-full">
-				<h1 class="text-2xl font-medium ">{e.firstName} {e.lastName}</h1>
+				<h1 class="text-2xl font-medium ">{e.yourName}</h1>
 				<div class=" mb-4"><span>{e.position} </span>, <span>{e.companyName}</span></div>
 				<div class="flex gap-3 flex-col">
 					<div class="flex  gap-6">
@@ -137,11 +137,3 @@
 		</div>
 	</div>
 </div>
-
-<!-- <button on:click={download}> Download</button> -->
-<style>
-	.page {
-		width: 210mm;
-		height: 297mm;
-	}
-</style>

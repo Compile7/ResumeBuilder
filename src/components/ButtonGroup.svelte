@@ -29,11 +29,11 @@
 		html2pdf(element, { html2canvas: { scale: 2 } });
 	}
 	let buttons = [
-		{
-			text: 'Template',
-			icon: faDragon,
-			show: false,
-		},
+		// {
+		// 	text: 'Template',
+		// 	icon: faDragon,
+		// 	show: false,
+		// },
 		{
 			text: 'Font',
 			icon: faFont,
@@ -41,16 +41,16 @@
 			show: false,
 			onClick: selectOption,
 		},
-		{
-			text: 'Layout',
-			icon: faSquareParking,
-			show: false,
-		},
-		{
-			text: 'Save',
-			icon: faSave,
-			show: false,
-		},
+		// {
+		// 	text: 'Layout',
+		// 	icon: faSquareParking,
+		// 	show: false,
+		// },
+		// {
+		// 	text: 'Save',
+		// 	icon: faSave,
+		// 	show: false,
+		// },
 		{
 			text: 'Download',
 			icon: faDownload,

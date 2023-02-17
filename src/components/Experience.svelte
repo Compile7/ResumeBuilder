@@ -2,7 +2,7 @@
 	import { resume } from '../store';
 </script>
 
-<div class="m-6 bg-white rounded-xl border-solid border border-gray-300">
+<div class="m-6 bg-white rounded-xl border-solid border border-gray-300" id="Experience">
 	<h2 class="border-b border-solid  border-gray-300 px-6 py-4 text-xl font-semibold">Experience</h2>
 	<div class="flex flex-col p-6  ">
 		<div class="form-group flex flex-col gap-1 mb-4">

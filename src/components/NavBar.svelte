@@ -1,5 +1,5 @@
 <script>
-	import { faUserNinja, faSignIn, faLink } from '@fortawesome/free-solid-svg-icons';
+	import { faUserNinja, faSignIn, faLink, faHome } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa';
 	let src = './logo.svg';
 	const navButtons = [
@@ -17,8 +17,12 @@
 	<div class="text-2xl pl-2 ">
 		<div>Resume<span class="text-rose-600">Fu</span></div>
 	</div> -->
-	<div class="logo">
-		<img {src} alt="Logo" />
+	<div class="logo flex items-center gap-2 border-r border-gray-500 border-solid pr-6">
+		<!-- <img {src} alt="Logo" /> -->
+		<a href="/myresumes">
+			<Fa icon={faHome} class="pr-2" />
+		</a>
+		<div>Hitesh Kumawat</div>
 	</div>
 
 	{#each navButtons as { text }}
