@@ -11,6 +11,32 @@
 			$resume.personalDetails.avatar = avatar;
 		};
 	};
+
+	let email = '';
+	let emailError = '';
+	let phoneError = '';
+	let phoneNumber = '';
+
+	function validateEmail(e) {
+		let re =
+			/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		email = e.target.value;
+		if (email !== '' && !re.test(email)) {
+			emailError = 'Please enter a valid Email.';
+		} else {
+			emailError = '';
+		}
+	}
+
+	function validatePhoneNumber(e) {
+		const pattern = /^\+?\d{1,3}[\s-]?\d{9,15}$/;
+		phoneNumber = e.target.value;
+		if (phoneNumber !== '' && !pattern.test(phoneNumber)) {
+			phoneError = 'Please enter a valid PhoneNumber.';
+		} else {
+			phoneError = '';
+		}
+	}
 </script>
 
 <div class="m-6 bg-white rounded-xl border-solid border border-gray-300">
@@ -83,12 +109,19 @@
 		<div class="form-group flex flex-col gap-1 mb-4">
 			<label for="" class="text-sm text-gray-700">Email</label>
 			<input
-				type="text"
+				type="Email"
 				class="py-2 px-4 rounded-md border border-solid border-gray-400 text-sm"
 				placeholder="Email"
 				bind:value={$resume.personalDetails.email}
+				on:blur={validateEmail}
+
 			/>
 		</div>
+
+		{#if emailError && email !== ''}
+			<p class="text-sm text-red-500">{emailError}</p>
+		{/if}
+		
 		<div class="form-group flex flex-col gap-1 mb-4">
 			<label for="" class="text-sm text-gray-700">Website</label>
 			<input
@@ -114,8 +147,12 @@
 				class="py-2 px-4 rounded-md border border-solid border-gray-400 text-sm"
 				placeholder="Phone"
 				bind:value={$resume.personalDetails.phone}
+				on:blur={validatePhoneNumber}
 			/>
 		</div>
+		{#if phoneError && phoneNumber !== ''}
+			<p class="text-sm text-red-500">{phoneError}</p>
+		{/if}
 		<!-- {#if avatar}
         <img class="avatar" src="{avatar}" alt="d" />
         {/if}-->
