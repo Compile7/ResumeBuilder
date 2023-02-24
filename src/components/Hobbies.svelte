@@ -1,10 +1,16 @@
 <script>
-	import { faAdd } from '@fortawesome/free-solid-svg-icons';
+	import { faAdd,faTrash } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa';
 	import { resume } from '../store';
 	function addhobbies() {
-		$resume.hobbies.push('');
+		$resume.hobbies.push({id: Date.now(), value:''});
 		$resume.hobbies = $resume.hobbies;
+	}
+
+	function removeHobbies(e) {
+		$resume.hobbies = $resume.hobbies.filter((element) => {
+			return element.id != e.currentTarget.id;
+		});
 	}
 </script>
 
@@ -21,6 +27,16 @@
 					bind:value={hobby}
 				/>
 			</div>
+
+			<!-- {#if $resume.hobbies.length > 1}  -->
+			<button
+				on:click={removeHobbies}
+				id={hobby.id}
+				class=" mb-2 flex justify-center items-center gap-2 py-1 px-4 rounded-full text-red-700 border border-solid border-red-700"
+			>
+				<Fa icon={faTrash} class=" text-red-700 " />Remove Hobbies</button
+			>
+			<!-- {/if} -->
 		{/each}
 		<button
 			class=" flex justify-center items-center gap-2 py-1 px-4 rounded-full text-blue-700 border border-solid border-blue-700 rb-button hover:text-white hover:bg-blue-700 transition"

@@ -88,7 +88,7 @@
 					bind:value={education.summary}
 				/>
 			</div>
-			{#if $resume.education.length > 1}
+			<!-- {#if $resume.educations.length > 0}  -->
 				<button
 					on:click={removeEducation}
 					id={education.id}
@@ -96,7 +96,7 @@
 				>
 					<Fa icon={faTrash} class=" text-red-700 " />Remove Education</button
 				>
-			{/if}
+			<!-- {/if} -->
 		{/each}
 
 		<button
