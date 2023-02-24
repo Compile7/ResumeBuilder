@@ -8,9 +8,9 @@
 		{
 			text: 'Education',
 		},
-		{
-			text: 'Experience',
-		},
+		// {
+		// 	text: 'Experience',
+		// },
 		{
 			text: 'Skills',
 		},

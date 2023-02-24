@@ -1,4 +1,4 @@
-<!-- <script>
+<script>
 	import { resume } from '../store';
 </script>
 
@@ -79,4 +79,4 @@
 			/>
 		</div>
 	</div>
-</div> -->
+</div>
