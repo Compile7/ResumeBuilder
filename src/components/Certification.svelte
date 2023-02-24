@@ -38,7 +38,7 @@
 					bind:value={certification.year}
 				/>
 			</div>
-				{#if $resume.certifications.length > 1} 
+				<!-- {#if $resume.certifications.length > 1}  -->
 			<button
 				on:click={removeCertification}
 				id={certification.id}
@@ -46,7 +46,7 @@
 			>
 				<Fa icon={faTrash} class=" text-red-700 " />Remove Certification</button
 			>
-			{/if}
+			<!-- {/if} -->
 		{/each}
 		<button
 			class=" flex justify-center items-center gap-2 py-1 px-4 rounded-full text-blue-700 border border-solid border-blue-700 rb-button hover:text-white hover:bg-blue-700 transition"

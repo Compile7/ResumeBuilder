@@ -13,12 +13,10 @@ export const resume = writable({
     professionalSummary:"",
    },
 
-  skills: [''],
-  certifications:[{name:'', year:''}],
-  education:[{name:'', summary:'', started:'',finished:'', id:1}],
-  employment:[{name:'', summary:'', started:'',finished:'', id:1}],
-  hobbies: [''],
-  summary: [{fullsummary: ''}],
-  languages: [{myLanguage: ''}],
+   skills: [],
+  certifications:[],
+  educations:[],
+  employments:[],
+  hobbies: [],
 	font: 'classic',
 });
