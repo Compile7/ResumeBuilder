@@ -5,10 +5,10 @@
 	import Button from './Button.svelte';
 	export let fontOptions = [
 		{
-			text: 'classic',
+			text: 'Dosis',
 		},
 		{
-			text: 'elegant',
+			text: 'Poppins',
 		},
 	];
 

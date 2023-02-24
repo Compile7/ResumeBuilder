@@ -4,4 +4,11 @@
 
 html {
     font-family: "Inter", sans-serif;
+    scroll-behavior: smooth;
+}
+.rb-button:hover svg path {
+    fill: white;
+}
+.custom_scroll {
+    scroll-behavior: smooth;
 }

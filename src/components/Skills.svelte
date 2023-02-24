@@ -13,7 +13,7 @@
 	}
 </script>
 
-<div class="m-6 bg-white rounded-xl border-solid border border-gray-300">
+<div class="m-6 bg-white rounded-xl border-solid border border-gray-300" id="Skills">
 	<h2 class="border-b border-solid  border-gray-300 px-6 py-4 text-xl font-semibold">Skills</h2>
 	<div class="flex flex-col p-6  ">
 		{#each $resume.skills as skill}
@@ -38,7 +38,7 @@
 			{/if}
 		{/each}
 		<button
-			class=" flex justify-center items-center gap-2 py-1 px-4 rounded-full text-blue-700 border border-solid border-blue-700 "
+			class=" flex justify-center items-center gap-2 py-1 px-4 rounded-full text-blue-700 border border-solid border-blue-700 rb-button hover:text-white hover:bg-blue-700 transition"
 			on:click={addskills}
 		>
 			<Fa icon={faAdd} class="focus:text-blue-700  text-blue-700 " />Add Skills</button

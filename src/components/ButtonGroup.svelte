@@ -1,6 +1,7 @@
 <script>
 	import Button from './Button.svelte';
 	import { fly } from 'svelte/transition';
+  import {resume} from '../store'
 	import {
 		faSave,
 		faDownload,
@@ -10,22 +11,29 @@
 	} from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa';
 	import FontOption from './FontOption.svelte';
-	// @ts-ignore
+   //@ts-ignore
 
+
+    
 	import { clickOutside } from '$lib/outclick';
-
+	import { onMount } from 'svelte';
+  // let html2pdf;
+  // onMount(async() =>{
+  //   html2pdf = document.html2pdf
+  // })
 	function download() {
 		console.log('inside download button');
 		let element = document.getElementById('preview');
-		//@ts-ignore
+    console.log({font: $resume.font})
+    element.style.fontFamily = $resume.font
 		html2pdf(element, { html2canvas: { scale: 2 } });
 	}
 	let buttons = [
-		{
-			text: 'Template',
-			icon: faDragon,
-			show: false,
-		},
+		// {
+		// 	text: 'Template',
+		// 	icon: faDragon,
+		// 	show: false,
+		// },
 		{
 			text: 'Font',
 			icon: faFont,
@@ -33,16 +41,16 @@
 			show: false,
 			onClick: selectOption,
 		},
-		{
-			text: 'Layout',
-			icon: faSquareParking,
-			show: false,
-		},
-		{
-			text: 'Save',
-			icon: faSave,
-			show: false,
-		},
+		// {
+		// 	text: 'Layout',
+		// 	icon: faSquareParking,
+		// 	show: false,
+		// },
+		// {
+		// 	text: 'Save',
+		// 	icon: faSave,
+		// 	show: false,
+		// },
 		{
 			text: 'Download',
 			icon: faDownload,
