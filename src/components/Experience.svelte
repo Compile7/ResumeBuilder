@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 	import { resume } from '../store';
 </script>
 
@@ -65,7 +65,7 @@
 				type="text"
 				class="py-2 px-4 rounded-md border border-solid border-gray-400 text-sm"
 				placeholder="to"
-				bind:value={$resume.experience.to}
+          bind:value={$resume.experience.to}
 			/>
 		</div>
 		<div class="form-group flex flex-col gap-1 mb-4">
@@ -79,4 +79,4 @@
 			/>
 		</div>
 	</div>
-</div>
+</div> -->

@@ -41,7 +41,7 @@
 <div class="m-6 bg-white rounded-xl border-solid border border-gray-300" id="Education">
 	<h2 class="border-b border-solid  border-gray-300 px-6 py-4 text-xl font-semibold">Education</h2>
 	<div class="flex flex-col p-6  ">
-		{#each $resume.education as education}
+		{#each $resume.educations as education}
 			<div class="form-group flex flex-col gap-1 mb-4">
 				<label for="" class="text-sm text-gray-700">Name</label>
 				<input

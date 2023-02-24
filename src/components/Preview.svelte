@@ -3,8 +3,8 @@
 	$: e = $resume.personalDetails;
 	$: hobbies = $resume.hobbies.filter((t) => t);
 	$: certifications = $resume.certifications.filter((t) => t);
-	$: employments = $resume.employment.filter((t) => t);
-	$: educations = $resume.education.filter((t) => t);
+	$: employments = $resume.employments.filter((t) => t);
+	$: educations = $resume.educations.filter((t) => t);
 	$: skills = $resume.skills.filter((t) => t);
 	//$: console.log({ $resume });
 	let fontStyle = 'font-family:serif';
@@ -106,7 +106,7 @@
 				<!-- sidebar -->
 
 				<div class="w-4/12 pl-4">
-					{#if skills.length > 0}
+					<!-- {#if skills.length > 0}
 						<h2 class="text-xl font-medium mb-3">Skills</h2>
 						<div class="flex flex-wrap gap-1 ">
 							{#each skills as skill, skillIndex}
@@ -114,7 +114,7 @@
 								{#if skills.length - 1 !== skillIndex}, {/if}
 							{/each}
 						</div>
-					{/if}
+					{/if} -->
 					<h2 class="text-xl font-medium mb-3">Certification</h2>
 					<div class="flex flex-col p-6  gap-2">
 						{#each certifications as certification, certificationIndex}
