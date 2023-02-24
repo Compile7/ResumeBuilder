@@ -6,6 +6,7 @@
 		{
 			text: 'Resume Detials',
 		},
+    
 		{
 			text: 'Theme & Layout',
 		},
